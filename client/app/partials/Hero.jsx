@@ -38,12 +38,17 @@ export default class Hero extends TrackerReact(Component) {
         {
           this.state.latestGames.map((item) => {
             console.log(item);
-
+              if(item.image === null){
+                return <div className="hero-content" key={item.id}>
+                          <p>{item.name}</p>
+                          <img src="http://placehold.it/350x150"alt="Logo Image" className="hero-logo" />
+                       </div>
+              }else{
               return <div className="hero-content" key={item.id}>
-                        <p>{item.aliases}</p>
-                        <img src={item.image.medium_url} alt="Logo Image" className="hero-logo" />
+                        <p>{item.name}</p>
+                        <img src={item.image.screen_url} alt="Logo Image" className="hero-logo" />
                      </div>
-
+                   }
           })
         }
 

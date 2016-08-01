@@ -33,25 +33,39 @@ export default class Hero extends TrackerReact(Component) {
 
   render() {
     return (
-      <div className="hero">
+      <div id="slider">
+
+		    <input defaultChecked type="radio" name="slider" id="slide1" />
+		    <input type="radio" name="slider" id="slide2" />
+		    <input type="radio" name="slider" id="slide3" />
+		    <input type="radio" name="slider" id="slide4" />
+		    <input type="radio" name="slider" id="slide5" />
+
+
+		  <div id="slides">
+			  <div id="overflow">
+				  <div className="inner">
+
 
         {
           this.state.latestGames.map((item) => {
             console.log(item);
               if(item.image === null){
-                return <div className="hero-content" key={item.id}>
-                          <p>{item.name}</p>
+                return <article key={item.id}>
+                          <p className="info">{item.name}</p>
                           <img src="http://placehold.it/350x150"alt="Logo Image" className="hero-logo" />
-                       </div>
+                       </article>
               }else{
-              return <div className="hero-content" key={item.id}>
-                        <p>{item.name}</p>
+              return <article className="hero-content" key={item.id}>
+                        <p className="info">{item.name}</p>
                         <img src={item.image.screen_url} alt="Logo Image" className="hero-logo" />
-                     </div>
+                     </article>
                    }
           })
         }
-
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

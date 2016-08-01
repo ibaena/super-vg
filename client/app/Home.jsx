@@ -18,9 +18,14 @@ export default class Home extends TrackerReact(Component) {
 
   render() {
     return (
-      <p id="text">
-        HOME PAGE
-      </p>
+      <div id="container">
+        <div id="left-col">
+          Left
+        </div>
+        <div id="right-col">
+          Right
+        </div>
+      </div>
     )
   }
 }

@@ -1,3 +1,18 @@
-#text{
-  font-size: 50px; 
+@import "{wolves:bourbon}/bourbon";
+@import "{wolves:neat}/neat";
+@import "{wolves:bitters}/base";
+@import "{}/client/styles/imports/_nav.scss";
+
+
+//Home Styles
+/*Home Styles*/
+
+#container{
+  @include outer-container;
+    #left-col{
+      @include span-columns(6);
+    }
+    #right-col{
+      @include span-columns(6);
+    }
 }

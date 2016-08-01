@@ -12,7 +12,7 @@ export const MainLayout = ({content}) => (
         <Nav />
     </header>
 
-    <div className="wrapper-for-content-outside-of-footer">
+    <div className="wrapper-for-content-outside-of-footer" id="content-wrapper">
         <main>
             {content}
         </main>

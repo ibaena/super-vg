@@ -51,15 +51,31 @@ export default class Hero extends TrackerReact(Component) {
           this.state.latestGames.map((item) => {
             console.log(item);
               if(item.image === null){
-                return <article key={item.id}>
-                          <p className="info">{item.name}</p>
-                          <img src="http://placehold.it/350x150"alt="Logo Image" className="hero-logo" />
-                       </article>
+                return  <div className="hover-tile-outer" key={item.id}>
+                          <div className="hover-tile-container">
+                            <div className="hover-tile hover-tile-visible"></div>
+                              <div className="hover-tile hover-tile-hidden">
+                                <article >
+                                  <p className="info">{item.name}</p>
+                                  <img src="http://placehold.it/350x150"alt="Logo Image" className="hero-logo" />
+                                </article>
+                              </div>
+                            </div>
+                          </div>
+
               }else{
-              return <article className="hero-content" key={item.id}>
-                        <p className="info">{item.name}</p>
-                        <img src={item.image.screen_url} alt="Logo Image" className="hero-logo" />
-                     </article>
+              return  <div className="hover-tile-outer" key={item.id}>
+                        <div className="hover-tile-container">
+                          <img src={item.image.screen_url} alt="Logo Image" className="hero-logo" />
+                          <div className="hover-tile hover-tile-visible"></div>
+                            <div className="hover-tile hover-tile-hidden">
+                              <article>
+                                <p className="info">{item.name}</p>
+
+                              </article>
+                            </div>
+                          </div>
+                        </div>
                    }
           })
         }

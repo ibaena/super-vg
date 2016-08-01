@@ -11,12 +11,13 @@ export const MainLayout = ({content}) => (
     <header className="navigation" role="banner">
         <Nav />
     </header>
+
     <div className="wrapper-for-content-outside-of-footer">
         <main>
             {content}
         </main>
     </div>
-        
+
     <footer className="footer-2" role="contentinfo">
         <Footer />
     </footer>

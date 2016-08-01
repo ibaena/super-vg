@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+import Grid from './partials/Grid.jsx';
+import Hero from './partials/Hero.jsx';
+
 
 export default class Home extends TrackerReact(Component) {
 
@@ -18,14 +21,11 @@ export default class Home extends TrackerReact(Component) {
 
   render() {
     return (
-      <div id="container">
-        <div id="left-col">
-          Left
-        </div>
-        <div id="right-col">
-          Right
-        </div>
+      <div id="home-wrapper">
+        <Hero />
+        <Grid />
       </div>
+
     )
   }
 }

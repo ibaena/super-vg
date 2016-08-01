@@ -3,17 +3,10 @@
 @import "{wolves:bitters}/base";
 @import "{}/client/styles/imports/_nav.scss";
 @import "{}/client/styles/imports/_footer.scss";
+@import "{}/client/styles/imports/home.scss";
 
-
-//Home Styles
-/*Home Styles*/
-
-#container{
+//Main-layout Styles
+/*Main-Layout Styles*/
+.wrapper-for-content-outside-of-footer{
   @include outer-container;
-    #left-col{
-      @include span-columns(6);
-    }
-    #right-col{
-      @include span-columns(6);
-    }
 }

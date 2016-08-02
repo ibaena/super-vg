@@ -1,109 +1,60 @@
 //Home Styles
 /*Home Styles*/
-@mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
-}
 
-.grid-items {
-  $action-color: #477DCA !default;
-  $base-background-color: white !default;
-  $medium-screen: 40em !default;
-  $large-screen: 53.75em !default;
-  $grid-items-background: $base-background-color;
-  $grid-item-background: desaturate($action-color, 30%);
-  $grid-item-colors:
-    desaturate($action-color, 30%),
-    #3581A5,
-    #5FBEBE,
-    #98C79A,
-    #A7A891,
-    #BDCC97,
-    #979EA0;
-  $grid-item-border-size: 9px;
-  $grid-item-columns: 4;
-  $grid-item-big-columns: 8;
-  $grid-item-color: white;
-  $grid-item-height: 14em;
+#grid-wrapper{
+  #video-block{
+    @include outer-container;
+    margin-bottom: 20px;
+    h2{
 
-  @include clearfix;
-
-  .grid-item {
-    background: $grid-item-background;
-    border-bottom: $grid-item-border-size solid $grid-items-background;
-    border-left: ($grid-item-border-size / 2) solid $grid-items-background;
-    border-right: ($grid-item-border-size / 2) solid $grid-items-background;
-    border-top: 0;
-    cursor: pointer;
-    float: left;
-    height: $grid-item-height;
-    outline: none;
-    overflow: hidden;
-    padding: 2em;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    width: 100%;
-
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-columns);
+      text-align: left;
     }
-
-    @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
-      &:nth-child(#{$i}) {
-        $background-from-list: nth($grid-item-colors, $i);
-        background-color: $background-from-list;
-        box-shadow: inset 0 0 1px 2px darken($background-from-list, 10%);
-
-        &:focus,
-        &:hover {
-          background-color: darken($background-from-list, 10%);
-          background-position: top;
-          background-repeat: no-repeat;
-          background-size: cover;
+    .video{
+      @include span-columns(9);
+        iframe{
+          width: 100%;
+          height: 400px;
         }
+    }
+    .video-description{
+      @include span-columns(3);
+      display: inline-block;
+        #video-links{
+          display: inline-block;
+          float: right;
+          margin-right: 25px;
+            li a{
+              display: block;
+              text-align: center;
+
+              img{
+                display: inline;
+              }
+            }
+        }
+    }
+  }
+  #review-block{
+    #search-wrapper{
+      @include span-columns(3);
+    }
+    #recent-reviews{
+      @include span-columns(9);
+      #review-links{
+        margin-left: 30px;
+          li{
+            @include span-columns(4);
+            @include omega(3n);
+          }
       }
     }
+
   }
-
-  .grid-item img {
-    display: block;
-    height: 3em;
-    margin: 0 auto 1em;
-  }
-
-  .grid-item h1 {
-    color: $grid-item-color;
-    font-size: 1.3em;
-    margin-bottom: 0.4em;
-  }
-
-  .grid-item p {
-    color: transparentize($grid-item-color, 0.3);
-    line-height: 1.5em;
-    margin: auto;
-
-    @include media($medium-screen) {
-      max-width: 70%;
-    }
-  }
-
-  .grid-item-big {
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-big-columns);
+  #games-block{
+    .game{
+      @include span-columns(2);
+      text-align: center;
     }
 
-    p {
-      @include media($medium-screen) {
-        max-width: 60%;
-      }
-    }
-  }
-
-  .grid-item-image {
-    background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
-    background-color: $grid-item-background;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }

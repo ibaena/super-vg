@@ -3,7 +3,6 @@
 
 #grid-wrapper{
   #video-block{
-    @include outer-container;
     margin-bottom: 20px;
     h2{
 
@@ -35,6 +34,9 @@
     }
   }
   #review-block{
+    .grid-titles{
+      @include span-columns(12);
+    }
     #search-wrapper{
       @include span-columns(3);
     }
@@ -51,9 +53,26 @@
 
   }
   #games-block{
-    .game{
-      @include span-columns(2);
-      text-align: center;
+    #platform-check{
+      margin-bottom: 25px;
+    }
+    #game-links{
+      li{
+        @include span-columns(2);
+        @include omega(6n);
+        a{
+          p{
+            font-size: 14px;
+            display: inline-block;
+          }
+          img{
+            height: 175px;
+            width: 125px;
+
+          }
+        }
+
+      }
     }
 
   }
